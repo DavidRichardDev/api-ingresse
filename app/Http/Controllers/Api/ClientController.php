@@ -14,12 +14,20 @@ class ClientController extends Controller
 
         $this->client = $client;
     }
-
+    /**
+     * Method GET API
+     * 
+     * @return json with the first 10 clients and links for others pages
+     */
     public function index(){
     
         return response()->json($this->client->paginate(10));
     }
-
+    /**
+     * Method GET {id} API
+     * 
+     * @return json with a single client found for your id
+     */
     public function show(Client $id){           
         $client = $this->client->find($id);
 
@@ -30,11 +38,14 @@ class ClientController extends Controller
         $data = ['data' => $client]; 
         return response()->json($data);
     }
-
+    /**
+     * Method POST API
+     * 
+     * @return json response of insertion with status code and message
+     */
     public function insert(Request $request){
 
         try{
-
             $clientData = $request->all();
             $this->client->create($clientData);
 
@@ -48,7 +59,11 @@ class ClientController extends Controller
             return response()->json(ApiError::errorMessage('Ocorreu um erro ao realizar a operação de salvar!', 1010), 500);
         }
     }
-
+    /**
+     * Method PUT API
+     * 
+     * @return json response of update with status code and message
+     */
     public function update(Request $request, $id){
 
         try{
@@ -67,7 +82,11 @@ class ClientController extends Controller
             return response()->json(ApiError::errorMessage('Ocorreu um erro ao realizar a operação de atualizar!', 1011), 500);
         }
     }
-
+    /**
+     * Method DELETE API
+     * 
+     * @return json response of delete with status code and message
+     */
     public function delete (Client $id){
         try{
             $id->delete();

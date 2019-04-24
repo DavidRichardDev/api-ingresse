@@ -1,6 +1,6 @@
 # api-ingresse
 
-#REQUISITOS UTILIZADOS
+# REQUISITOS UTILIZADOS
 
 PHP 7.3.4
 mySQL 5.6.37
@@ -10,7 +10,7 @@ Docker toolbox
 Docker-compose  1.20.1
 git
 
-#ATIVAÇÂO PROJETO LOCAL
+# ATIVAÇÂO PROJETO LOCAL
 composer install
 
 Crie um banco de dados através de um SGBD de sua preferência ou linha de comando com o nome "api_ingresse" charset UTF8 Collation: utf8_unicode_ci

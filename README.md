@@ -56,7 +56,7 @@ Rode os comandos na raiz do projeto:
     composer install
     cp env-example .env
 
-As credenciais do banco de dados estão configurados em /.env e config/database.php da seguinte forma:
+As credenciais do banco de dados devem ser checadas e configuradas em /.env e config/database.php da seguinte forma:
 
     Banco de dados: api_ingresse
     Usuário: root
@@ -78,4 +78,7 @@ Na raiz do projeto também há um documento em PDF e outro em DOCX com as evidê
     evidencias_de_teste.pdf
     evidencias_de_teste.docx
 
+# Ativação projeto com Docker
+
+    https://programarivm.com/dockerize-a-laravel-5-app-with-php-fpm-nginx-and-mysql/
 

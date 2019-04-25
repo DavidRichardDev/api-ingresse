@@ -2,13 +2,13 @@
 
 # Requisitos utilizados
 
-PHP 7.3.4
-mySQL 5.6.37
-Composer 1.8.4
-Postman
-Docker toolbox
-Docker-compose  1.20.1
-git
+ - PHP 7.3.4
+ - mySQL 5.6.37
+ - Composer 1.8.4
+ - Postman
+ - Docker toolbox
+ - Docker-compose  1.20.1
+ - git
 
 # Ativação projeto local
 

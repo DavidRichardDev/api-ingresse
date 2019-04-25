@@ -28,7 +28,7 @@ class ClientController extends Controller
      * 
      * @return json with a single client found for your id
      */
-    public function show(Client $id){           
+    public function show($id){           
         $client = $this->client->find($id);
 
         if(! $client){

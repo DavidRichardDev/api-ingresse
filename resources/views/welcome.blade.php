@@ -43,21 +43,49 @@
             .content {
                 text-align: center;
             }
-
-            .title {
-                font-size: 84px;
+            .col{
+                width: 50%;
+                display:block;
+                float:left;
+                text-align:left;
             }
 
-            .links > a {
+            .title {
+                font-size: 30px;
+            }
+
+            p {
                 color: #636b6f;
-                padding: 0 25px;
+                padding: 0 25px 20px 0;
                 font-size: 13px;
                 font-weight: 600;
                 letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
+                text-align: left;
+                margin-bottom: 0px;
             }
 
+            .links ul{
+                margin-top: 0px;
+            }
+
+            .links ul li, ul.json li {
+                color: #636b6f;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                display: block;
+                text-align: left;
+            }
+            ul.json{
+                margin: 25px 0;
+                padding: 0px;
+            }
+            ul.json li{
+               padding-left: 25px;
+            }
+            ul.json li:first-child, ul.json li:last-child{
+                padding: 0px;
+            }
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -81,18 +109,42 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    API para consulta, inserçao, atualização e remoçao de clientes.
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="col">
+                    <div class="links">
+                        <p href="{{ url('api/clients') }}">GET - /api/clients</p>
+                        <p href="{{ url('api/clients/1') }}">GET - /api/clients/{id}</p>
+                        <p href="{{ url('api/clients') }}">POST - /api/clients</p>
+                        <ul>
+                            <li>name (string)</li>
+                            <li>mail (string)</li>
+                            <li>celphone (string)</li>
+                            <li>age (int)</li>
+                        </ul>
+                        <p href="{{ url('api/clients') }}">PUT - /api/clients/{id}</p>
+                        <ul>
+                            <li>name (string)</li>
+                            <li>mail (string)</li>
+                            <li>celphone (string)</li>
+                            <li>age (int)</li>
+                        </ul>
+                        <p href="{{ url('api/clients') }}">DELETE - /api/clients/{id}</p>
+                    </div>
                 </div>
+                <div class="col">
+                    <p>Exemplo de dados:</p>
+                    <ul class="json">
+                        <li>{</li>
+                        <li>name: Nome cliente,</li>
+                        <li>mail: cliente@mail.com,</li>
+                        <li>celphone: (11) 99999-9999,</li>
+                        <li>age: 25</li>
+                        <li>}</li>
+                    </ul>
+                    <p>Obs: O método GET (/api/clients) vem com o resultado paginado.</p>
+                    <p>Para ver cada página basta colocar desta forma na url /api/clients?page=2.</p>
+                </div>           
             </div>
         </div>
     </body>

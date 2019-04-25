@@ -64,7 +64,16 @@ class ClientTest extends TestCase
      */
     public function testGetSingleClientApi()
     {
-        $response = $this->json('GET', '/api/clients/1');
+        $data = [
+            'name' => 'Davi Ricardo',
+            'mail' => 'davi@gmail.com',
+            'celphone' => '(11) 94859-9865',
+            'age' => 28
+        ];
+
+        $client = \App\Client::create($data);
+
+        $response = $this->json('GET', '/api/clients/'.$client->id);
         $response->assertStatus(200);
     }
     /**
@@ -95,7 +104,16 @@ class ClientTest extends TestCase
      * @return boolean
      */
     public function testPutClientApi(){
-        $response = $this->json('PUT', '/api/clients/2', ['mail' => 'nomealterado@gmail.com', 'celphone' => '(11) 91111-1111', 'age' => 27]);
+        $data = [
+            'name' => 'Dario Alvez',
+            'mail' => 'teste@gmail.com',
+            'celphone' => '(11) 97777-7777',
+            'age' => 25
+        ];
+
+        $client = \App\Client::create($data);
+
+        $response = $this->json('PUT', '/api/clients/'.$client->id , ['mail' => 'nomealterado@gmail.com', 'celphone' => '(11) 91111-1111', 'age' => 27]);
 
         $this->assertDatabaseHas('clients', [
             'mail' => 'nomealterado@gmail.com',
